@@ -11,11 +11,11 @@
     },
     {
         "id": 1766936134483,
-        "title": "𝕌𝕀/𝕌𝕏 ʙʏ ʙᴏꜱꜱ",
+        "title": "UI/UX by BOSS",
         "dev": "Boss MB",
         "cat": "Tools",
         "icon": "https://raw.githubusercontent.com/Boss-MB/Nexus-Store-Data/main/UI%5CUX-by-Boss/UIUX%20(1).jpg",
-        "desc": "Elevate Your Web Design with BOSS UI Library!\n\nAre you a web developer, designer, or a learner looking for stunning UI components? Look no further! BOSS UI Library is the ultimate open-source collection of modern, responsive, and ready-to-use HTML, CSS, and JavaScript elements.\n\nWhether you need a glowing neon button, a glassmorphism card, or a fully functional navigation bar, we have it all. Just View, Copy, and Paste into your projects!\n\nKey Features:\n\n🔥 Massive Component Library\nAccess a growing collection of Buttons, Inputs, Cards, Loaders, Toggles, and more. All designs are modern and aesthetically pleasing (Dark Mode optimized).\n\n👀 Live Preview\nDon't just read the code—see it in action! Tap on any element to open a full-screen interactive preview before you use it.\n\n🛠 Built-in Code Manager (Exclusive)\nCreate and save your own custom elements directly inside the app! Use our powerful Editor to write HTML, CSS, and JS, and save it to your personal library.\n\n• Auto-Save Feature: Never lose your work.\n• Backup & Restore: Easily backup your data via text code and restore it on any device.\n\n📋 Copy-Paste Ready\nGet clean, formatted code with a single tap. We separate HTML, CSS, and JS for easy integration into your projects.\n\n📶 100% Offline Capable\nWork without internet! Your library and saved components work perfectly offline.\n\nWho is this for?\n• Web Developers (Frontend)\n• UI/UX Designers\n• Students learning HTML/CSS\n• AppCreator24 Users\n\nDownload BOSS UI today and start building beautiful websites faster than ever!",
+        "desc": "Elevate Your Web Design with BOSS UI Library!\n\nAre you a web developer looking for stunning UI components? Look no further! BOSS UI Library is the ultimate open-source collection.\n\nKey Features:\n\n\uD83D\uDD25 Massive Component Library\nAccess a growing collection of Buttons, Inputs, Cards. (Dark Mode optimized).\n\n\uD83D\uDC40 Live Preview\nDon't just read the code—see it in action! Tap on any element to open a full-screen preview.\n\n\uD83D\uDEE0 Built-in Code Manager\nCreate and save your own custom elements directly inside the app!\n\n\u2022 Auto-Save Feature: Never lose your work.\n\u2022 Backup & Restore: Easily backup your data.\n\n\uD83D\uDCCB Copy-Paste Ready\nGet clean, formatted code with a single tap.\n\n\uD83D\uDCF6 100% Offline Capable\nWork without internet! Your library works perfectly offline.\n\nWho is this for?\n\u2022 Web Developers\n\u2022 UI/UX Designers\n\u2022 AppCreator24 Users\n\nDownload BOSS UI today!",
         "link": "https://github.com/Boss-MB/Nexus-Store-Data/releases/download/v1.0/UI-UX.by.boss.apk",
         "screens": [
             "https://raw.githubusercontent.com/Boss-MB/Nexus-Store-Data/main/UI%5CUX-by-Boss/Screenshot_2025-12-28-20-57-15-62_2f1992ed616e2a6e367717189a20cc29.jpg",
@@ -24,3 +24,4 @@
         ]
     }
 ]
+
