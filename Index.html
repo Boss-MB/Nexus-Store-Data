@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Store</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0f0f13; --card: #1e1e24; --accent: #00e676; --text: #fff; --sub: #a0a0a0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; -webkit-tap-highlight-color: transparent; }
+        body { background: var(--bg); color: var(--text); padding-top: 60px; overflow-x: hidden; }
+
+        /* --- NAVIGATION --- */
+        .nav { position: fixed; top: 0; width: 100%; height: 60px; background: rgba(30,30,36,0.98); backdrop-filter: blur(10px); display: flex; align-items: center; justify-content: space-between; padding: 0 15px; z-index: 100; border-bottom: 1px solid #333; }
+        .logo { font-weight: bold; font-size: 20px; color: var(--accent); letter-spacing: 1px; display: flex; align-items: center; gap: 10px; }
+        
+        /* --- SIDEBAR --- */
+        .sidebar { position: fixed; top: 0; left: -100%; width: 260px; height: 100%; background: #15151a; z-index: 101; padding-top: 20px; transition: 0.3s; box-shadow: 2px 0 20px black; }
+        .sidebar.active { left: 0; }
+        .sidebar-header { padding: 20px; font-size: 22px; font-weight: bold; border-bottom: 1px solid #333; margin-bottom: 10px; color: var(--accent); }
+        
+        .menu-item { padding: 15px 25px; display: flex; align-items: center; color: #ccc; text-decoration: none; font-size: 15px; transition: 0.2s; }
+        .menu-item i { width: 30px; font-size: 18px; color: var(--accent); } /* SVG Icons Style */
+        .menu-item:hover { background: #222; color: white; }
+        
+        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 100; display: none; }
+
+        /* --- HOME GRID --- */
+        .container { padding: 15px; }
+        .loader { text-align: center; margin-top: 50px; display: none; }
+        .loader i { font-size: 30px; color: var(--accent); animation: spin 1s linear infinite; }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 15px; }
+        .card { background: var(--card); padding: 15px; border-radius: 15px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.2s; border: 1px solid #2a2a2a; }
+        .card:active { transform: scale(0.95); }
+        .card img { width: 65px; height: 65px; border-radius: 14px; background: #333; margin-bottom: 10px; object-fit: cover; }
+        .c-title { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .c-dev { font-size: 11px; color: var(--sub); margin-top: 2px; }
+
+        /* --- DETAILS PAGE --- */
+        .details { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg); z-index: 200; transform: translateY(100%); transition: 0.3s cubic-bezier(0.25, 1, 0.5, 1); overflow-y: auto; }
+        .details.open { transform: translateY(0); }
+        
+        .d-header { background: linear-gradient(180deg, #1e1e24 0%, #0f0f13 100%); padding: 40px 20px 20px; text-align: center; border-bottom: 1px solid #333; }
+        
+        /* Bigger Icon Style */
+        .d-icon { width: 130px; height: 130px; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); margin-bottom: 15px; border: 2px solid #333; object-fit: cover; }
+        
+        .btn-dl { background: var(--accent); color: black; padding: 14px; border-radius: 12px; display: block; text-decoration: none; font-weight: bold; margin-top: 20px; box-shadow: 0 0 20px rgba(0,230,118,0.3); text-align: center; font-size: 16px; letter-spacing: 0.5px; }
+        .btn-dl:active { transform: scale(0.98); opacity: 0.9; }
+
+        /* Screenshots Scroller */
+        .d-screens { display: flex; overflow-x: auto; gap: 12px; padding: 20px; scroll-behavior: smooth; }
+        .d-screens img { height: 220px; border-radius: 12px; border: 1px solid #333; box-shadow: 0 5px 15px rgba(0,0,0,0.5); cursor: pointer; }
+        .d-screens::-webkit-scrollbar { display: none; } /* Hide scrollbar */
+
+        .d-desc { padding: 0 20px 80px 20px; color: #ccc; line-height: 1.6; font-size: 14px; white-space: pre-wrap; }
+        .back-btn { position: absolute; top: 15px; left: 15px; width: 40px; height: 40px; background: rgba(0,0,0,0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; cursor: pointer; z-index: 201; }
+
+        /* --- LIGHTBOX (FULL SCREEN IMAGE) --- */
+        .lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 300; display: none; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; }
+        .lightbox.active { display: flex; opacity: 1; }
+        .lightbox img { max-width: 95%; max-height: 90%; border-radius: 5px; box-shadow: 0 0 30px rgba(0,0,0,0.8); }
+        .lightbox-close { position: absolute; top: 20px; right: 20px; font-size: 30px; color: white; cursor: pointer; background: rgba(255,255,255,0.1); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+
+    </style>
+</head>
+<body>
+
+    <div class="nav">
+        <i class="fas fa-bars" onclick="toggleMenu()" style="font-size: 22px; cursor: pointer;"></i>
+        <div class="logo"><i class="fas fa-cube" style="color:var(--accent)"></i> NEXUS</div>
+        <i class="fas fa-search" onclick="toggleSearch()" style="font-size: 22px; cursor: pointer;"></i>
+    </div>
+
+    <div class="overlay" onclick="toggleMenu()"></div>
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">MENU</div>
+        <a href="#" class="menu-item" onclick="filter('All')"><i class="fas fa-th-large"></i> All Apps</a>
+        <a href="#" class="menu-item" onclick="filter('Tools')"><i class="fas fa-code"></i> Tools & Python</a>
+        <a href="#" class="menu-item" onclick="filter('Games')"><i class="fas fa-gamepad"></i> Games</a>
+        <a href="#" class="menu-item" onclick="filter('PC Software')"><i class="fas fa-desktop"></i> PC Software</a>
+        <div style="border-top:1px solid #333; margin: 20px 0;"></div>
+        <a href="#" class="menu-item" onclick="location.reload()"><i class="fas fa-sync-alt"></i> Refresh Store</a>
+    </div>
+
+    <div id="searchBar" style="padding:15px; display:none; background:#1e1e24; border-bottom: 1px solid #333;">
+        <input type="text" placeholder="Search apps..." onkeyup="search(this.value)" style="width:100%; padding:12px; background:#111; color:white; border:1px solid #333; border-radius:8px; outline:none;">
+    </div>
+
+    <div class="container">
+        <div class="loader" id="loader"><i class="fas fa-circle-notch"></i><br><br>Loading Store...</div>
+        <div class="grid" id="grid"></div>
+    </div>
+
+    <div class="details" id="detailsPage">
+        <div class="back-btn" onclick="closeDetails()"><i class="fas fa-arrow-left"></i></div>
+        
+        <div class="d-header">
+            <img id="d-icon" src="" class="d-icon">
+            <h2 id="d-title" style="font-size: 24px; margin-bottom: 5px;">App Name</h2>
+            <p id="d-dev" style="color:var(--accent); font-weight:600;">Dev Name</p>
+            <a id="d-link" href="#" class="btn-dl"><i class="fas fa-download"></i> DOWNLOAD</a>
+        </div>
+
+        <div style="padding: 20px 20px 0 20px; font-weight: bold; color: #fff;">Preview</div>
+        <div class="d-screens" id="d-screens"></div>
+
+        <div class="d-desc">
+            <h3 style="margin-bottom:10px; color:white;">About this app</h3>
+            <p id="d-text">...</p>
+        </div>
+    </div>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-close">×</div>
+        <img id="lightbox-img" src="">
+    </div>
+
+    <script>
+        // **********************************************
+        // ⚠️ APNA GITHUB LINK YAHAN PASTE KARO
+        const DATA_URL = "https://raw.githubusercontent.com/Boss-MB/Nexus-Store-Data/main/apps.json"; 
+        // **********************************************
+
+        let appsData = [];
+        const loader = document.getElementById('loader');
+        const grid = document.getElementById('grid');
+
+        async function loadApps() {
+            loader.style.display = 'block';
+            grid.innerHTML = '';
+            try {
+                const res = await fetch(DATA_URL);
+                if (!res.ok) throw new Error("Failed");
+                appsData = await res.json();
+                render(appsData);
+            } catch (err) {
+                grid.innerHTML = "<p style='text-align:center; color:#ff5555; padding:20px'>Failed to load apps.<br>Please check internet.</p>";
+            } finally {
+                loader.style.display = 'none';
+            }
+        }
+
+        function render(list) {
+            grid.innerHTML = list.map(app => `
+                <div class="card" onclick="openApp(${app.id})">
+                    <img src="${app.icon}" onerror="this.src='https://via.placeholder.com/60'">
+                    <div class="c-title">${app.title}</div>
+                    <div class="c-dev">${app.dev}</div>
+                </div>
+            `).join('');
+        }
+
+        function openApp(id) {
+            const app = appsData.find(a => a.id === id);
+            document.getElementById('d-title').innerText = app.title;
+            document.getElementById('d-dev').innerText = app.dev;
+            document.getElementById('d-text').innerText = app.desc;
+            document.getElementById('d-icon').src = app.icon;
+            document.getElementById('d-link').href = app.link;
+            
+            const scr = document.getElementById('d-screens');
+            if(app.screens.length) {
+                scr.innerHTML = app.screens.map(s => `<img src="${s}" onclick="openLightbox('${s}')">`).join('');
+            } else {
+                scr.innerHTML = '<p style="color:#555; margin:auto">No Preview Available</p>';
+            }
+            
+            document.getElementById('detailsPage').classList.add('open');
+        }
+
+        function closeDetails() { document.getElementById('detailsPage').classList.remove('open'); }
+        
+        // Lightbox Logic
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').classList.add('active');
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        // UI Toggles
+        function toggleMenu() { 
+            document.getElementById('sidebar').classList.toggle('active');
+            document.querySelector('.overlay').style.display = document.querySelector('.overlay').style.display === 'block' ? 'none' : 'block';
+        }
+        function toggleSearch() { 
+            const s = document.getElementById('searchBar'); 
+            s.style.display = s.style.display === 'none' ? 'block' : 'none'; 
+        }
+        function search(q) { render(appsData.filter(a => a.title.toLowerCase().includes(q.toLowerCase()))); }
+        function filter(cat) { 
+            toggleMenu();
+            render(cat === 'All' ? appsData : appsData.filter(a => a.cat === cat)); 
+        }
+
+        loadApps();
+
+    </script>
+</body>
+  </html>
+  
