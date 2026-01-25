@@ -42,22 +42,23 @@
         "https://raw.githubusercontent.com/Boss-MB/Nexus-Store-Data/refs/heads/main/Spotify%20Premium/Screenshot_2026-01-12-12-05-22-88_b5a5c5cb02ca09c784c5d88160e2ec24.jpg"
     ]
 },
-    {
-"id": 1769345638495,
-"title": "Test Anylisis",
-"dev": "Boss MB",
-"cat": "Tools",
-"icon": "https://raw.githubusercontent.com/Boss-MB/Nexus-Store-Data/refs/heads/main/Test-Analysis/icon.png",
-"desc": "Track, Analyze, and Improve your Exam Scores with **Test Analysis**.\\n\\nAce your competitive exams like JEE Mains, JEE Advanced, NEET, and Boards with the ultimate student companion. **Test Analysis** is designed to help you track your mock test performance, visualize your progress, and focus on your weak areas. Whether you are studying Physics, Chemistry, or Maths, this app is your personal report card manager.\\n\\n**Why use Test Analysis for your preparation?**\\n- **Smart Score Tracking:** Easily enter and manage marks for Physics, Chemistry, and Maths (or any custom subjects).\\n- **Visual Analytics:** View beautiful, interactive graphs that show your progress over time. Spot upward or downward trends instantly.\\n- **Subject-wise Breakdown:** Filter your data to see how you are performing in specific subjects versus your overall aggregate.\\n- **Multi-Exam Profiles:** Preparing for multiple exams? Create separate profiles for JEE, Boards, or BITSAT and track them individually.\\n\\n**Flexible & Secure:**\\n- **Guest Mode:** Start using the app immediately without an account. Your data stays local on your device.\\n- **Cloud Sync:** Login with a secure account (Username/Email) to save your data permanently and sync across devices.\\n- **Data Freedom:** Export your test history as JSON for backups or share it with mentors. Import data anytime.\\n\\n**Designed for Students:**\\n- **Distraction-Free UI:** A clean, modern interface that lets you focus on your stats.\\n- **Dark & Light Themes:** Switch between Dark Mode for late-night study sessions and Light Mode for daytime use.\\n- **Profile Customization:** Set your bio and goals to keep yourself motivated every time you open the app.\\n\\n**Key Features:**\\n- Add unlimited test records with Title, Date, and Marks.\\n- Automatic percentage and average score calculation.\\n- Horizontal scrolling graphs for long-term history.\\n- Secure and fast performance.\\n\\nStop guessing your progress. Start analyzing it. Download **Test Analysis** today and take the first step towards your dream college/rank!\"",
-"link": "https://github.com/Boss-MB/Nexus-Store-Data/releases/download/v1.0/Test.Analysis.apk",
-"screens": [
-"https://raw.githubusercontent.com/Boss-MB/Nexus-Store-Data/refs/heads/main/Test-Analysis/img1.jpg",
-" https://raw.githubusercontent.com/Boss-MB/Nexus-Store-Data/refs/heads/main/Test-Analysis/img2.jpg",
-" https://raw.githubusercontent.com/Boss-MB/Nexus-Store-Data/refs/heads/main/Test-Analysis/img3.jpg",
-" https://raw.githubusercontent.com/Boss-MB/Nexus-Store-Data/refs/heads/main/Test-Analysis/img4.jpg",
-" https://raw.githubusercontent.com/Boss-MB/Nexus-Store-Data/refs/heads/main/Test-Analysis/img5.jpg",
-" https://raw.githubusercontent.com/Boss-MB/Nexus-Store-Data/refs/heads/main/Test-Analysis/img6.jpg",
-" https://raw.githubusercontent.com/Boss-MB/Nexus-Store-Data/refs/heads/main/Test-Analysis/img7.jpg"
-]
+{
+    "id": 1769345638495,
+    "title": "Test Analysis",
+    "dev": "Boss MB",
+    "cat": "Tools",
+    "icon": "https://raw.githubusercontent.com/Boss-MB/Nexus-Store-Data/refs/heads/main/Test-Analysis/icon.png",
+    "desc": "Track, Analyze, and Improve your Exam Scores with Test Analysis\n\nAce your competitive exams like JEE Mains, JEE Advanced, NEET, and Boards with the ultimate student companion. Test Analysis is designed to help you track your mock test performance, visualize your progress, and focus on your weak areas. Whether you are studying Physics, Chemistry, or Maths, this app is your personal report card manager.\n\nWhy choose Test Analysis for your preparation? Here, you can:\n- Smart Score Tracking: Easily enter and manage marks for Physics, Chemistry, and Maths (or any custom subjects)\n- Visual Analytics: View beautiful, interactive graphs that show your progress over time. Spot upward or downward trends instantly\n- Subject-wise Breakdown: Filter your data to see how you are performing in specific subjects versus your overall aggregate\n- Multi-Exam Profiles: Preparing for multiple exams? Create separate profiles for JEE, Boards, or BITSAT and track them individually\n\nFlexible & Secure – use it your way:\n- Guest Mode: Start using the app immediately without an account. Your data stays local on your device\n- Cloud Sync: Login with a secure account (Username/Email) to save your data permanently and sync across devices\n- Data Freedom: Export your test history as JSON for backups or share it with mentors. Import data anytime\n\nDesigned for Students – keep your focus:\n- Distraction-Free UI: A clean, modern interface that lets you focus on your stats\n- Dark & Light Themes: Switch between Dark Mode for late-night study sessions and Light Mode for daytime use\n- Profile Customization: Set your bio and goals to keep yourself motivated every time you open the app\n\nKey Features:\n- Add unlimited test records with Title, Date, and Marks\n- Automatic percentage and average score calculation\n- Horizontal scrolling graphs for long-term history\n- Secure and fast performance\n\nStop guessing your progress. Start analyzing it. Download Test Analysis today and take the first step towards your dream college/rank!",
+    "link": "https://github.com/Boss-MB/Nexus-Store-Data/releases/download/v1.0/Test.Analysis.apk",
+    "screens": [
+        "https://raw.githubusercontent.com/Boss-MB/Nexus-Store-Data/refs/heads/main/Test-Analysis/img1.jpg",
+        "https://raw.githubusercontent.com/Boss-MB/Nexus-Store-Data/refs/heads/main/Test-Analysis/img2.jpg",
+        "https://raw.githubusercontent.com/Boss-MB/Nexus-Store-Data/refs/heads/main/Test-Analysis/img3.jpg",
+        "https://raw.githubusercontent.com/Boss-MB/Nexus-Store-Data/refs/heads/main/Test-Analysis/img4.jpg",
+        "https://raw.githubusercontent.com/Boss-MB/Nexus-Store-Data/refs/heads/main/Test-Analysis/img5.jpg",
+        "https://raw.githubusercontent.com/Boss-MB/Nexus-Store-Data/refs/heads/main/Test-Analysis/img6.jpg",
+        "https://raw.githubusercontent.com/Boss-MB/Nexus-Store-Data/refs/heads/main/Test-Analysis/img7.jpg"
+    ]
 }
+
 ]
