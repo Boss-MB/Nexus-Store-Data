@@ -10,6 +10,22 @@
         "screens": []
     },
     {
+    "id": 1776016451816,
+    "title": "Atlas Ai",
+    "dev": "Boss MB",
+    "cat": "Tools",
+    "icon": "https://raw.githubusercontent.com/Boss-MB/Nexus-Store-Data/refs/heads/main/Atlas%20Ai/Untitled%20design%20(1).jpg",
+    "desc": "Meet Atlas AI – Your Ultimate Smart Assistant! 🌌\\n\\nWelcome to Atlas AI, a next-generation conversational AI designed to make your life easier, faster, and smarter. Powered by the lightning-fast intelligence of Groq (Llama 3.1) and the deep analytical power of Google Gemini, Atlas isn't just a chatbot—it's your personal coding expert, study buddy, and document analyzer rolled into one sleek app.\\n\\n✨ Why Choose Atlas AI?\\n\\n- 📄 Smart File Analysis\\nUpload up to 3 files at once! Whether it's a PDF document or an image, Atlas can read, analyze, and explain complex concepts in seconds.\\n\\n- 💻 Pro Coding Assistant\\nAsk for code, and Atlas delivers in a beautiful, developer-friendly format with instant copy buttons and syntax highlighting.\\n\\n- 🧮 Advanced Math Solver\\nFrom simple calculations to complex LaTeX formulas, get accurate and neatly formatted mathematical solutions.\\n\\n- 🎨 Sleek & Personalized UI\\nA beautiful, dark-themed interface that remembers your name and adapts perfectly to your mobile screen.\\n\\n- ⚡ Blazing Fast Responses\\nNo more waiting. Get detailed, structured, and highly accurate answers in the blink of an eye.\\n\\nDownload Atlas AI today and experience the future of personal AI assistants directly on your device!",
+    "link": "https://github.com/Boss-MB/Nexus-Store-Data/releases/download/v1.0/Atlas.Ai.apk",
+    "screens": [
+        "https://raw.githubusercontent.com/Boss-MB/Nexus-Store-Data/refs/heads/main/Atlas%20Ai/Screenshot_2026-04-12-23-05-16-26_c161aaca42b8560f1eeaf4bfc814b3ba.jpg.jpeg",
+        "https://raw.githubusercontent.com/Boss-MB/Nexus-Store-Data/refs/heads/main/Atlas%20Ai/Screenshot_2026-04-12-23-07-12-45_c161aaca42b8560f1eeaf4bfc814b3ba.jpg.jpeg",
+        "https://raw.githubusercontent.com/Boss-MB/Nexus-Store-Data/refs/heads/main/Atlas%20Ai/Screenshot_2026-04-12-23-08-21-91_c161aaca42b8560f1eeaf4bfc814b3ba.jpg.jpeg",
+        "https://raw.githubusercontent.com/Boss-MB/Nexus-Store-Data/refs/heads/main/Atlas%20Ai/Screenshot_2026-04-12-23-08-59-98_c161aaca42b8560f1eeaf4bfc814b3ba.jpg.jpeg",
+        "https://raw.githubusercontent.com/Boss-MB/Nexus-Store-Data/refs/heads/main/Atlas%20Ai/Screenshot_2026-04-12-23-10-14-79_c161aaca42b8560f1eeaf4bfc814b3ba.jpg.jpeg"
+    ]
+},
+    {
         "id": 1766936134483,
         "title": "UI/UX By BOSS",
         "dev": "Boss MB",
